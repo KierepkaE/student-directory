@@ -4,4 +4,4 @@ This is student directory script that allows you to manage the list of students 
 
 # how to use
 
-shell - type: **ruby directory.rb**
+`shell - type: **ruby directory.rb**`
