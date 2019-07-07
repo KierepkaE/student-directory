@@ -1,6 +1,6 @@
 # student directory
 
-This is student directory script that allows you to manage the list of students currently attending Villains Academy classes.
+This is student directory script that allows you to manage the list of students currently attending **Villains Academy** classes.
 
 # how to use
 
