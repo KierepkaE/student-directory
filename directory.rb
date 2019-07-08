@@ -1,26 +1,4 @@
 @students = [] # an empty array accessible to all methods
-def input_students
-  puts 'Please enter the names of students: '
-  puts 'To finish, just hit return twice'
-  #get the first name
-  name = gets.chomp
-  #while the name is not empty repeat this code
-  while !name.empty? do
-    #add the students hash to the array
-    @students << {name: name, cohort: :november}
-    puts "Now we have #{@students.count} students"
-    #gets another name from the user
-    name = gets.chomp
-  end
-end
-
-def interactive_menu
-  students = []
-  loop do
-    print_menu
-    process(gets.chomp)
-  end
-end
 
 def print_menu
   puts "1. Input the students"
@@ -30,10 +8,12 @@ def print_menu
   puts "9. Exit"
 end
 
-def show_students
-  print_header
-  print_students_list
-  print_footer
+def interactive_menu
+  students = []
+  loop do
+    print_menu
+    process(gets.chomp)
+  end
 end
 
 def process(selection)
@@ -50,6 +30,27 @@ def process(selection)
     exit
   else "I don't know what you meant, try again please"
   end
+end
+
+def input_students
+  puts 'Please enter the names of students: '
+  puts 'To finish, just hit return twice'
+  #get the first name
+  name = STDIN.gets.chomp
+  #while the name is not empty repeat this code
+  while !name.empty? do
+    #add the students hash to the array
+    @students << {name: name, cohort: :november}
+    puts "Now we have #{@students.count} students"
+    #gets another name from the user
+    name = STDIN.gets.chomp
+  end
+end
+
+def show_students
+  print_header
+  print_students_list
+  print_footer
 end
 
 def print_header
@@ -100,4 +101,5 @@ def try_load_students
   end
 end
 
+try_load_students
 interactive_menu
